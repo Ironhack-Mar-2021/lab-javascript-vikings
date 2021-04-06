@@ -22,9 +22,27 @@ class Viking extends Soldier {
         super(health, strength)
         this.name = name
     }
+    receiveDamage = (damage) => {
+        this.health -= damage;
+        if (this.health > 0) {
+            return `${this.name} has received ${damage} points of damage`
+        } else {
+            return `${this.name} has died in act of combat`
+        }
+    }
+    battleCry = () => {
+        return "Odin Owns You All!";
+    }
 
 }
 let thor = new Viking ("Thorrrrr!", 100, 90)
+
+console.log(thor.receiveDamage(rambo.attack()))
+console.log(thor.battleCry())
+console.log(rambo.receiveDamage(thor.attack()))
+console.log(thor.receiveDamage(rambo.attack()))
+
+
 
 // Saxon
 class Saxon {}
