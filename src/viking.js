@@ -45,7 +45,23 @@ console.log(thor.receiveDamage(rambo.attack()))
 
 
 // Saxon
-class Saxon {}
+class Saxon extends Soldier {
+    receiveDamage = (thedamage) => {
+        this.health -= thedamage;
+        if (this.health > 0) {
+            return `A Saxon has received ${thedamage} points of damage`;
+        } else {
+            return `A Saxon has died in combat`;
+        }
+}
+}
+
+let annSaxon = new Saxon (100, 33)
+
+console.log(annSaxon.receiveDamage(rambo.attack()));
+console.log(rambo.receiveDamage(annSaxon.attack()));
+console.log(annSaxon.receiveDamage(rambo.attack()));
+
 
 // War
 class War {}
