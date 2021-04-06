@@ -64,4 +64,25 @@ console.log(annSaxon.receiveDamage(rambo.attack()));
 
 
 // War
-class War {}
+class War {
+    constructor(){
+        this.vikingArmy= []
+        this.saxonArmy=[]
+    }
+    addViking(viking) {
+        this.vikingArmy.push(viking)
+    }
+
+    addSaxon(saxon){
+        this.saxonArmy.push(saxon)
+    }
+    vikingAttack(){
+        let attacker = this.vikingArmy[Math.floor(Math.random()* this.vikingArmy.length) ]
+        let defender = this.saxonArmy[Math.floor(Math.random()* this.saxonArmy.length)]
+
+
+    }
+    saxonAttack()
+    showStatus()
+
+}
