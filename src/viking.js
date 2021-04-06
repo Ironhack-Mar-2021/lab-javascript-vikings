@@ -79,10 +79,26 @@ class War {
     vikingAttack(){
         let attacker = this.vikingArmy[Math.floor(Math.random()* this.vikingArmy.length) ]
         let defender = this.saxonArmy[Math.floor(Math.random()* this.saxonArmy.length)]
-
+        
+        let message = defender.receiveDamage(attacker.strength)
+        if (defender.health <= 0) {
+            this.saxonArmy.splice(defender)
+        }
 
     }
-    saxonAttack()
-    showStatus()
+    // saxonAttack()
+    // showStatus()
 
-}
+}   
+let billy = new Viking('Billy', 100, 30)
+let bill = new Viking('Bill', 100, 80)
+let bob = new Viking('Bob', 100, 65)
+let jake = new Viking('Jake', 100, 92)
+let maria = new Saxon(100, 100)
+let jessie = new Saxon(90, 200)
+let kim = new Saxon(100, 20)
+let charles = new Saxon(100, 70)
+let WW3 = new War()
+
+WW3.addViking([billy,bill,bob,jake])
+WW3.addSaxon([maria, jessie, kim, charles])
